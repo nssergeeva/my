@@ -1,6 +1,6 @@
-example = 'Urban university'
-print(example[0])
-print(example[-1])
-print(example[7:16])
-print(example[1:16:2])
-print(example[::-1])
+the_number_of_completed_dz = 12
+number_of_hours_spent = 1.5
+course_name = 'Python'
+time_for_one_task = (number_of_hours_spent / the_number_of_completed_dz)
+print(time_for_one_task)
+print('Курс:', course_name, ",", 'всего задач:', the_number_of_completed_dz, ',', 'затрачено часов:', number_of_hours_spent,',', 'среднее время выполнения:', time_for_one_task,'.')
