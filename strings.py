@@ -1,8 +1,7 @@
-name = 'Nadya'
-print('Name:', name)
-age = 21
-print('Age:', age)
-age = 23
-print('New Age:', age)
-is_student = True
-print('Is Student:', is_student)
+my_string = input('good morning ')
+print(len(my_string))
+print(my_string.upper())
+print(my_string.lower())
+print(my_string.replace(' ',''))
+print(my_string[0])
+print(my_string[-1])
