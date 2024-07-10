@@ -52,22 +52,8 @@ class House:
             return super().__new__(cls)
 
     def __del__(self):
-            print(f'{self} снесён, но останется в истории')
+            print(f'{self.name} снесён, но останется в истории')
 
-h1 = House('ЖК Эльбрус', 10)
-h2 = House('ЖК Акация', 20)
-
-print(h1)
-print(h2)
-
-print(h1 == h2)
-
-h1 = h1 + 10
-print(h1)
-print(h1 == h2)
-
-h1 += 10
-print(h1)
 
 h1 = House('ЖК Эльбрус', 10)
 print(House.houses_history)
