@@ -1,4 +1,4 @@
-import time
+from time import sleep
 class User:
     def __init__(self, nickname: str, password: int, age: int):
         self.nickname = nickname
@@ -61,22 +61,23 @@ class UrTube:
                 list_movie.append(video.title)
         return list_movie
 
-    def watch_video(self, movie: str):
-        if self.current_user:
-            for video in self.videos:
-                if self.current_user and self.current_user.age < 18:
-                    print('Вам нет 18 лет, пожалуйста покиньте страницу')
-                    return
-                if movie in video.title:
-                    for i in range(1, 11):
-                        print(i, end=' ')
-                        time.sleep(1)
-                        video.time_now += 1
-                    video.time_now = 0
-                    print('Конец видео')
-
-        else:
-            print('Войдите в аккаунт, чтобы смотреть видео')
+    def watch_video(self, title):
+        if self.current_user == None:
+            print("Войдите в аккаунт чтобы смотреть видео")
+            return
+        for i in self.videos:
+            if title == i.title:
+                if i.adult_mode == True:
+                    if self.current_user.age < 18:
+                        print("Вам нет 18 лет, пожалуйста покиньте страницу")
+                        break
+                for t in range(1, i.duration + 1):
+                    sleep(1)
+                    print(t, end=' ')
+                    i.time_now += 1
+                print("Конец видео")
+                i.time_now = 0
+                break
 
 
 if __name__ == '__main__':
